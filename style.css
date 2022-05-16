@@ -1,0 +1,58 @@
+body{
+    background-color: antiquewhite;
+    
+}
+.welcome {
+    text-align: center;
+    font-family: 'Anton', sans-serif;    
+    font-size: 80px;
+
+}
+.question{
+    border: solid 5px purple;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+    width:fit-content;
+    margin:auto;
+    margin-top: 100px;
+    padding:20px
+    
+
+
+
+}
+.answer{
+    border:solid 5px purple;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px
+
+}
+
+button { 
+    background-color: green;
+    margin-top: 100px;
+    margin-left: 390px;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+
+
+    
+    
+    
+}
+button:hover{
+    transform: scale(1.1)
+}
+
+
+
+
+    
