@@ -1,52 +1,75 @@
 body{
     background-color: antiquewhite;
-    
 }
 .welcome {
     text-align: center;
     font-family: 'Anton', sans-serif;    
     font-size: 80px;
+    border: 10px;
+    border-color: black;
 
 }
+.maincontainer{
+    position:absolute;
+    width: 800px;
+    height: 260px;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+  }
+
+
+  .flipCard {
+    transform: rotateY(180deg) 
+  }
 .question{
+    position: absolute;
     border: solid 5px purple;
     text-align: center;
     font-family: 'Anton', sans-serif;
     font-size: 70px;
-    width:fit-content;
+    width:100%;
+    height:100%;
+    backface-visibility: hidden;
+    overflow: hidden;
     margin:auto;
     margin-top: 100px;
-    padding:20px
-    
-
-
-
+    padding:20px;
 }
 .answer{
-    border:solid 5px purple;
+    position: absolute;
+    border: solid 5px purple;
     text-align: center;
     font-family: 'Anton', sans-serif;
     font-size: 70px;
-    width: fit-content;
-    margin: auto;
+    width:100%;
+    height:100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    margin:auto;
     margin-top: 100px;
-    padding: 20px
-
+    padding:20px;
+    transform:rotateY(180deg);
 }
-
 button { 
     background-color: green;
-    margin-top: 100px;
-    margin-left: 390px;
+    margin-top: 10px;
+    margin-left: 400px;
     color: black;
     padding: 20px;
     text-align: center;
-    font-family: 'Anton', sans-serif;
-
-
-    
-    
-    
+    font-family: 'Anton', sans-serif;    
 }
 button:hover{
     transform: scale(1.1)
