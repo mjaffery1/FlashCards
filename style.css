@@ -38,16 +38,16 @@ body{
   .flipCard {
     transform: rotateY(180deg) 
   }
-.question{
+.question-container{
     position: absolute;
     border: solid 5px purple;
     text-align: center;
     font-family: 'Anton', sans-serif;
-    font-size: 50px;
-    width: 800px;
-    height: 260px;
-    backface-visibility: hidden;
+    font-size: 25px;
     overflow: hidden;
+    backface-visibility: hidden;
+    width: 800px;
+    height:260px;
     margin: auto;
     margin-top:50px;
     padding:10px;
@@ -57,7 +57,7 @@ body{
     border: solid 5px purple;
     text-align: center;
     font-family: 'Anton', sans-serif;
-    font-size: 60px;
+    font-size: 30px;
     width: 800px;
     height: 260px;
     backface-visibility: hidden;
@@ -70,18 +70,22 @@ body{
 button { 
     background-color: green;
     margin-top: 10px;
-    margin-left: 400px;
+    /* margin-left: 400px; */
     color: rgb(9, 9, 9);
     padding: 20px;
     text-align: center;
     font-family: 'Anton', sans-serif; 
+    display: inline-block;
 }
 button:hover{
     transform: scale(1.1)
 }
 .choices{
-    display: inline-block;
     display: flex;
+    width:inherit;
+    justify-content: space-evenly;
 }
-
+h3{
+    margin-top: 10px;
+}
     

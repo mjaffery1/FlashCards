@@ -4,9 +4,14 @@ const checkAnswer = document.querySelector('.check')
 const nextQuestion = document.querySelector('.next')
 const card = document.querySelector('.card')
 const choices = document.querySelector('.choices')
+const mainContainer= document.querySelector('.maincontainer')
+const choiceA= document.querySelector('#choice-a')
+const choiceB= document.querySelector('#choice-b')
+const choiceC= document.querySelector('#choice-c')
+
 let viewingQuestion = true
 let i=0
-
+console.log(viewingQuestion);
 flipCard = () => {
     card.classList.toggle("flipCard")
 }
@@ -105,56 +110,70 @@ let questions = [
 
   ];
 //   for (let i=0;i<questions.length;i++)[Math.floor(Math.random *questions.length)]
-
+// console.log(questions[0]);
   getRandomQuestion= () => {
     //   for(let i=0;i<questions.length;i++){
     randomQuestion= questions[i].question
     // console.log(randomQuestion);
-    question.innerText= `${randomQuestion}` 
-    if (i<questions.length-1) {
+    question.innerText= `${randomQuestion}`
+    choiceA.innerText=questions[i].answers.a
+    choiceB.innerText=questions[i].answers.b
+    choiceC.innerText=questions[i].answers.c
+
+    
+    
+    
+
+  }
+  
+//  console.log(questions.length)
+  
+// getAnswer= () => {
+//     // if (i<questions.length){
+//     //     i++
+//     // }else{
+//     //     i=0
+//     // }  
+
+//   
+
+//       if (i<questions.length-1) {
+//         i++
+//     }else{ 
+//         i=0
+//     }
+//     }
+    
+    // getAnswer()
+    // console.log(randomAnswer);
+checkAnswer.addEventListener('click', () =>{
+    viewingQuestion=!viewingQuestion
+    console.log("checking answer", viewingQuestion);
+    randomAnswer=questions[i].correctAnswer
+    answer.innerText= `${randomAnswer} - ${questions[i].answers[randomAnswer]}`
+    // console.log(randomAnswer)
+    flipCard()  
+    // getAnswer()
+
+})
+
+
+
+nextQuestion.addEventListener('click', () =>{
+    if (!viewingQuestion){
+        flipCard() 
+        viewingQuestion = true
+    }
+    console.log("question", viewingQuestion);
+    if (i<questions.length) {
         i++
     }else{ 
         i=0
     }
-}
-  
-//  console.log(questions.length)
-  getAnswer=()=> {
-      randomAnswer=questions[i].correctAnswer
-    }
-    getAnswer()
-    console.log(randomAnswer);
-checkAnswer.addEventListener('click', () =>{
-    viewingQuestion=!viewingQuestion
-    // console.log("checking answer", viewingQuestion);
-    getAnswer()
-    answer.innerHTML= `${randomAnswer}`
-
-        console.log(randomAnswer)
-    flipCard()    
-
-})
-nextQuestion.addEventListener('click', () =>{
-    if (!viewingQuestion){
-        flipCard()
-        viewingQuestion=true
-        // console.log("question after flip", viewingQuestion);
-    }
-    // console.log("question", viewingQuestion);
     getRandomQuestion()
     // answer.innerHTML= 'Check Answer'
 
 })
-
-const newButton1=document.createElement("button")
-newButton1.innerText=questions[i].answers.a
-choices.appendChild(newButton1)
-const newButton2=document.createElement("button")
-newButton2.innerText=questions[i].answers.b
-choices.appendChild(newButton2)
-const newButton3=document.createElement("button")
-newButton3.innerText=questions[i].answers.c
- choices.appendChild(newButton3)
 
 
 
