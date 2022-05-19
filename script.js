@@ -8,6 +8,7 @@ const mainContainer= document.querySelector('.maincontainer')
 const choiceA= document.querySelector('#choice-a')
 const choiceB= document.querySelector('#choice-b')
 const choiceC= document.querySelector('#choice-c')
+let score=0
 
 let viewingQuestion = true
 let i=0
@@ -24,7 +25,7 @@ let questions = [
         b: "Sheryl Sandberg",
         c: "Brendan Eich"
       },
-      correctAnswer: "c"
+      correctAnswer: "Brendan Eich"
     },
     {
       question: "What does CSS stand for?",
@@ -33,7 +34,7 @@ let questions = [
         b: "Cascading Style Sheets",
         c: "Candy Sugar Sweet"
       },
-      correctAnswer: "b"
+      correctAnswer: "Cascading Style Sheets"
     },
     {
       question: "Which tool can you use to ensure code quality?",
@@ -42,7 +43,7 @@ let questions = [
         b: "jQuery",
         c: "ESLint"
       },
-      correctAnswer: "c"
+      correctAnswer: "ESLint"
     },
     {
         question: "What language does a computer speak?",
@@ -51,7 +52,7 @@ let questions = [
             b: "Binary",
             c: "Java"
         },
-        correctAnswer: "b"
+        correctAnswer: "Binary"
     },
     {
         question: "Are Git and Github the same thing?",
@@ -60,7 +61,7 @@ let questions = [
           b: "No",
           c: "Maybe So"
         },
-        correctAnswer: "b"
+        correctAnswer: "No"
       },
       {
         question: "How can you add a comment in a JavaScript?",
@@ -69,16 +70,16 @@ let questions = [
           b: "//This is a comment",
           c: "<!--This is a comment-->"
         },
-        correctAnswer: "b"
+        correctAnswer: "//This is a comment"
       },
       {
         question: "Where in an HTML document is the correct place to refer to an external style sheet?",
         answers: {
-          a: "In the <head> section",
+          a: `In the head section`,
           b: "In the <body> section",
           c: "At the end of the document"
         },
-        correctAnswer: "a"
+        correctAnswer: `In the head section`
       },
       {
           question: "Which HTML tag is used to define an internal stylesheet",
@@ -87,7 +88,7 @@ let questions = [
               b: "<style>",
               c: "<css>"
           },
-          correctAnswer: "b"
+          correctAnswer: "<style>"
       },
       {
         question: "Choose the correct element for the largest heading",
@@ -96,7 +97,7 @@ let questions = [
           b: "<head>",
           c: "<h1>"
         },
-        correctAnswer: "c"
+        correctAnswer: "<h1>"
       },
       {
           question: "Which is the correct syntax for identifying an element by class?",
@@ -105,7 +106,7 @@ let questions = [
               b: "#class",
               c: "<class>"
           },
-          correctAnswer: "a"
+          correctAnswer: ".class"
       }
 
   ];
@@ -114,17 +115,13 @@ let questions = [
   getRandomQuestion= () => {
     //   for(let i=0;i<questions.length;i++){
     randomQuestion= questions[i].question
+    
     // console.log(randomQuestion);
     question.innerText= `${randomQuestion}`
     choiceA.innerText=questions[i].answers.a
     choiceB.innerText=questions[i].answers.b
     choiceC.innerText=questions[i].answers.c
-
-    
-    
-    
-
-  }
+    }
   
 //  console.log(questions.length)
   
@@ -146,16 +143,16 @@ let questions = [
     
     // getAnswer()
     // console.log(randomAnswer);
-checkAnswer.addEventListener('click', () =>{
-    viewingQuestion=!viewingQuestion
-    console.log("checking answer", viewingQuestion);
-    randomAnswer=questions[i].correctAnswer
-    answer.innerText= `${randomAnswer} - ${questions[i].answers[randomAnswer]}`
-    // console.log(randomAnswer)
-    flipCard()  
-    // getAnswer()
+// checkAnswer.addEventListener('click', () =>{
+//     viewingQuestion=!viewingQuestion
+//     console.log("checking answer", viewingQuestion);
+//     randomAnswer=questions[i].correctAnswer
+//     answer.innerText=  questions[i].correctAnswer
+//     // console.log(randomAnswer)
+//     flipCard()  
+//     // getAnswer()
 
-})
+// })
 
 
 
@@ -163,6 +160,7 @@ nextQuestion.addEventListener('click', () =>{
     if (!viewingQuestion){
         flipCard() 
         viewingQuestion = true
+        
     }
     console.log("question", viewingQuestion);
     if (i<questions.length) {
@@ -171,12 +169,58 @@ nextQuestion.addEventListener('click', () =>{
         i=0
     }
     getRandomQuestion()
+    flipCard()
+
     // answer.innerHTML= 'Check Answer'
 
+})
+choiceA.addEventListener('click', correct = () => {
+  if (questions[i].correctAnswer===questions[i].answers.a){
+     score++ 
+    alert(`correct! You have ${score} points`)
+    answer.innerHTML=questions[i].correctAnswer
+    flipCard()
+    getRandomQuestion()
+  }else{
+      alert('incorrect!')
+      flipCard()
+      getRandomQuestion()
+      answer.innerText=questions[i].correctAnswer
+
+      
+  }
+})
+choiceB.addEventListener('click', correctAnswer = () => {
+    if (questions[i].correctAnswer===questions[i].answers.b){
+        score++
+        alert(`correct! You have ${score} points`)
+        answer.innerText=questions[i].correctAnswer
+        flipCard()
+        getRandomQuestion()
+    }else{
+        alert('incorrect!')
+        flipCard()
+        getRandomQuestion()
+        answer.innerText=questions[i].correctAnswer
+
+    }  
+})
+choiceC.addEventListener('click', correctAnswer = () => {
+    if (questions[i].correctAnswer===questions[i].answers.c){
+        score++
+        alert(`correct! You have ${score} points`)
+        answer.innerText=questions[i].correctAnswer
+        flipCard()
+        getRandomQuestion()
+    }else{ (checkAnswer)
+        alert('incorrect!')
+        flipCard()
+        getRandomQuestion()
+        answer.innerText=questions[i].correctAnswer
+
+    }
 })
 
 
 
-//create multiple choice options(3)
-//card should flip and show answer when choice is chosen
 //game should keep track of right and wrong answers
