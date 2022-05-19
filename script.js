@@ -1,6 +1,6 @@
 const question = document.querySelector('.question')
 const answer = document.querySelector('.answer')
-const checkAnswer = document.querySelector('.check')
+const refresh = document.querySelector('.refresh')
 const nextQuestion = document.querySelector('.next')
 const card = document.querySelector('.card')
 const choices = document.querySelector('.choices')
@@ -264,6 +264,8 @@ choiceC.addEventListener('click', correctAnswer = () => {
     console.log(i);
 })
 
-
+refresh.addEventListener('click',()=>{
+    location.reload();
+})
 
 //game should keep track of right and wrong answers
