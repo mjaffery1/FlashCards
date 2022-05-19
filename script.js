@@ -121,7 +121,14 @@ let questions = [
     choiceA.innerText=questions[i].answers.a
     choiceB.innerText=questions[i].answers.b
     choiceC.innerText=questions[i].answers.c
-    }
+    // if(i===9){
+    //     setTimeout(()=>{
+    //         alert(`You scored ${score} out of 10`)
+    //     },500)
+        
+    // }
+ }
+    
   
 //  console.log(questions.length)
   
@@ -163,11 +170,11 @@ nextQuestion.addEventListener('click', () =>{
         
     }
     console.log("question", viewingQuestion);
-    if (i<questions.length) {
-        i++
-    }else{ 
-        i=0
-    }
+    // if (i<questions.length) {
+    //     i++
+    // }else{ 
+    //     i=0
+    // }
     getRandomQuestion()
     flipCard()
 
@@ -177,48 +184,84 @@ nextQuestion.addEventListener('click', () =>{
 choiceA.addEventListener('click', correct = () => {
   if (questions[i].correctAnswer===questions[i].answers.a){
      score++ 
-    alert(`correct! You have ${score} points`)
+    alert(`Correct! You have ${score} points`)
     answer.innerHTML=questions[i].correctAnswer
+
     flipCard()
     getRandomQuestion()
   }else{
-      alert('incorrect!')
+      alert('Incorrect!')
       flipCard()
       getRandomQuestion()
       answer.innerText=questions[i].correctAnswer
+    }
+    if (i<questions.length) {
+        i++
+        if(i===questions.length){
+            setTimeout(()=>{
+                alert(`Game over! You scored ${score} out of 10`)
+            },1000)
+            
+        }
+    }else{ 
+        i=0
+    }
+    console.log(i);
 
-      
-  }
 })
 choiceB.addEventListener('click', correctAnswer = () => {
     if (questions[i].correctAnswer===questions[i].answers.b){
         score++
-        alert(`correct! You have ${score} points`)
+        alert(`Correct! You have ${score} points`)
         answer.innerText=questions[i].correctAnswer
         flipCard()
         getRandomQuestion()
     }else{
-        alert('incorrect!')
-        flipCard()
-        getRandomQuestion()
-        answer.innerText=questions[i].correctAnswer
-
-    }  
-})
-choiceC.addEventListener('click', correctAnswer = () => {
-    if (questions[i].correctAnswer===questions[i].answers.c){
-        score++
-        alert(`correct! You have ${score} points`)
-        answer.innerText=questions[i].correctAnswer
-        flipCard()
-        getRandomQuestion()
-    }else{ (checkAnswer)
-        alert('incorrect!')
+        alert('Incorrect!')
         flipCard()
         getRandomQuestion()
         answer.innerText=questions[i].correctAnswer
 
     }
+    if (i<questions.length) {
+        i++
+        if(i===questions.length){
+            setTimeout(()=>{
+                alert(`Game over! You scored ${score} out of 10`)
+            },1000)
+            
+        }
+    }else{ 
+        i=0
+    }  
+    console.log(i);
+})
+choiceC.addEventListener('click', correctAnswer = () => {
+    if (questions[i].correctAnswer===questions[i].answers.c){
+        score++
+        alert(`Correct! You have ${score} points`)
+        answer.innerText=questions[i].correctAnswer
+        flipCard()
+        getRandomQuestion()
+    }else{ (checkAnswer)
+        alert('Incorrect!')
+        flipCard()
+        getRandomQuestion()
+        answer.innerText=questions[i].correctAnswer
+
+    }
+    if (i<questions.length) {
+        i++
+        if(i==questions.length){
+            setTimeout(()=>{
+                alert(`Game over! You scored ${score} out of 10`)
+            },1000)
+            
+        }
+    }else{ 
+        i=0
+    }
+    console.log(i);
 })
 
 
