@@ -110,57 +110,14 @@ let questions = [
       }
 
   ];
-//   for (let i=0;i<questions.length;i++)[Math.floor(Math.random *questions.length)]
-// console.log(questions[0]);
+
   getRandomQuestion= () => {
-    //   for(let i=0;i<questions.length;i++){
-    randomQuestion= questions[i].question
-    
-    // console.log(randomQuestion);
+    randomQuestion= questions[i].question    
     question.innerText= `${randomQuestion}`
     choiceA.innerText=questions[i].answers.a
     choiceB.innerText=questions[i].answers.b
     choiceC.innerText=questions[i].answers.c
-    // if(i===9){
-    //     setTimeout(()=>{
-    //         alert(`You scored ${score} out of 10`)
-    //     },500)
-        
-    // }
  }
-    
-  
-//  console.log(questions.length)
-  
-// getAnswer= () => {
-//     // if (i<questions.length){
-//     //     i++
-//     // }else{
-//     //     i=0
-//     // }  
-
-//   
-
-//       if (i<questions.length-1) {
-//         i++
-//     }else{ 
-//         i=0
-//     }
-//     }
-    
-    // getAnswer()
-    // console.log(randomAnswer);
-// checkAnswer.addEventListener('click', () =>{
-//     viewingQuestion=!viewingQuestion
-//     console.log("checking answer", viewingQuestion);
-//     randomAnswer=questions[i].correctAnswer
-//     answer.innerText=  questions[i].correctAnswer
-//     // console.log(randomAnswer)
-//     flipCard()  
-//     // getAnswer()
-
-// })
-
 
 
 nextQuestion.addEventListener('click', () =>{
@@ -170,15 +127,10 @@ nextQuestion.addEventListener('click', () =>{
         
     }
     console.log("question", viewingQuestion);
-    // if (i<questions.length) {
-    //     i++
-    // }else{ 
-    //     i=0
-    // }
+
     getRandomQuestion()
     flipCard()
 
-    // answer.innerHTML= 'Check Answer'
 
 })
 choiceA.addEventListener('click', correct = () => {
@@ -268,4 +220,3 @@ refresh.addEventListener('click',()=>{
     location.reload();
 })
 
-//game should keep track of right and wrong answers
