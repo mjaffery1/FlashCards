@@ -52,4 +52,4 @@ I also had issues with the way I created the divs in my HTML.
 
 I was not doing it in a clean way so that also prevented me from creating elements and rendering them where I wanted them to be.
 
-
+//flipCard function credit to arjun khara on Youtube: https://www.youtube.com/watch?v=OV8MVmtgmoY
