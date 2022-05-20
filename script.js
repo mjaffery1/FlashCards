@@ -12,7 +12,7 @@ let score=0
 
 let viewingQuestion = true
 let i=0
-console.log(viewingQuestion);
+
 flipCard = () => {
     card.classList.toggle("flipCard")
 }
@@ -93,11 +93,11 @@ let questions = [
       {
         question: "Choose the correct element for the largest heading",
         answers: {
-          a: "<h6>",
-          b: "<head>",
-          c: "<h1>"
+          a: "h6",
+          b: "head",
+          c: 'h1'
         },
-        correctAnswer: "<h1>"
+        correctAnswer: 'h1'
       },
       {
           question: "Which is the correct syntax for identifying an element by class?",
@@ -126,7 +126,6 @@ nextQuestion.addEventListener('click', () =>{
         viewingQuestion = true
         
     }
-    console.log("question", viewingQuestion);
 
     getRandomQuestion()
     flipCard()
@@ -158,7 +157,6 @@ choiceA.addEventListener('click', correct = () => {
     }else{ 
         i=0
     }
-    console.log(i);
 
 })
 choiceB.addEventListener('click', correctAnswer = () => {
@@ -186,25 +184,24 @@ choiceB.addEventListener('click', correctAnswer = () => {
     }else{ 
         i=0
     }  
-    console.log(i);
 })
-choiceC.addEventListener('click', correctAnswer = () => {
-    if (questions[i].correctAnswer===questions[i].answers.c){
-        score++
-        alert(`Correct! You have ${score} points`)
-        answer.innerText=questions[i].correctAnswer
-        flipCard()
-        getRandomQuestion()
-    }else{ (checkAnswer)
-        alert('Incorrect!')
-        flipCard()
-        getRandomQuestion()
-        answer.innerText=questions[i].correctAnswer
+choiceC.addEventListener('click', correct = () => {
+  if (questions[i].correctAnswer===questions[i].answers.c){
+     score++ 
+    alert(`Correct! You have ${score} points`)
+    answer.innerHTML=questions[i].correctAnswer
 
+    flipCard()
+    getRandomQuestion()
+  }else{
+      alert('Incorrect!')
+      flipCard()
+      getRandomQuestion()
+      answer.innerText=questions[i].correctAnswer
     }
     if (i<questions.length) {
         i++
-        if(i==questions.length){
+        if(i===questions.length){
             setTimeout(()=>{
                 alert(`Game over! You scored ${score} out of 10`)
             },1000)
@@ -213,7 +210,6 @@ choiceC.addEventListener('click', correctAnswer = () => {
     }else{ 
         i=0
     }
-    console.log(i);
 })
 
 refresh.addEventListener('click',()=>{

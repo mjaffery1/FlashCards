@@ -1,12 +1,13 @@
 body{
-    background-color: antiquewhite;
+    background-color: #346b31;
 }
 .welcome {
     text-align: center;
-    font-family: 'Anton', sans-serif;    
-    font-size: 80px;
+    font-family: 'Callie Chalk Font', sans-serif;
+    font-size: 60px;
     border: 10px;
     border-color: black;
+    color:white
 
 }
 .maincontainer{
@@ -36,43 +37,45 @@ body{
   }
 .question-container{
     position: absolute;
-    border: solid 5px purple;
     text-align: center;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Callie Chalk Font', sans-serif;
     font-size: 25px;
     overflow: hidden;
     backface-visibility: hidden;
     width: 800px;
-    height:260px;
+    height:300px;
     margin: auto;
     margin-top:50px;
-    padding:10px;
+    padding:15px;
+    color: white;
 }
 .answer{
     position: absolute;
-    border: solid 5px purple;
+    border: ridge 5px antiquewhite;
     text-align: center;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Callie Chalk Font', sans-serif;
     font-size: 30px;
+    color:white;
     width: 800px;
-    height: 260px;
+    height: 300px;
     backface-visibility: hidden;
     overflow: hidden;
     margin:auto;
     margin-top: 50px;
-    padding:20px;
+    padding:15px;
     transform:rotateY(180deg);
 }
 button { 
     background-color: green;
     margin-top: 10px;
-    /* margin-left: 400px; */
-    color: black;
+    margin-left: 20px;
+    color: white;
     padding: 20px;
     text-align: center;
-    font-family: 'Anton', sans-serif; 
+    font-family: 'Callie Chalk Font', sans-serif;
     font-size: 20px;
     display: inline-block;
+    border: ridge 5px antiquewhite;
 }
 button:hover{
     transform: scale(1.1)
@@ -84,5 +87,6 @@ button:hover{
 }
 h3{
     margin-top: 10px;
+    border-bottom: groove 5px antiquewhite;
 }
-    
+
