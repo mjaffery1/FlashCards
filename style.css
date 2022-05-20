@@ -35,6 +35,7 @@ body{
   .flipCard {
     transform: rotateY(180deg) 
   }
+  /* credit to arjun khara youtube https://www.youtube.com/watch?v=OV8MVmtgmoY */
 .question-container{
     position: absolute;
     text-align: center;
